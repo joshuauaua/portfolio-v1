@@ -1,3 +1,4 @@
+import "./ProjectCard.css";
 export default function ProjectCard({ project }) {
   if (!project) {
     return <div className="project-card">No project data provided.</div>;

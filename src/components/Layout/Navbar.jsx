@@ -16,7 +16,7 @@ export default function Navbar() {
 
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
         <li><HashLink smooth to="/about" onClick={() => setMenuOpen(false)}>ABOUT</HashLink></li>
-        <li><HashLink smooth to="/#projects" onClick={() => setMenuOpen(false)}>PROJECTS</HashLink></li>
+        <li><HashLink smooth to="/projects" onClick={() => setMenuOpen(false)}>PROJECTS</HashLink></li>
         <li><HashLink smooth to="/#contact" onClick={() => setMenuOpen(false)}>CONTACT</HashLink></li>
       </ul>
 
