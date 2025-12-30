@@ -71,22 +71,14 @@
      User said "Refactor ... completely. Copy ... files".
      However, usually users prefer keeping valid requirements like 16:9 unless "Copy completely" overrides.
      "Copy ... files" suggests exact copy. 
-     BUT previously "Cards are way too big now". 16:9 is shorter than square.
-     I will stick to 16:9 (padding-bottom: 56.25%) as a safe middle ground vs square which takes more vertical space.
-     Actually, if I strictly copy, it's square. I will interpret "Copy ... files" as structure, but maybe keep some successful refinements?
-     "Refactor ... completely" implies the *source* is the source of truth.
-     I will use 100% (Square) as per source code. If user complains it's too big, they can ask to revert.
-     Actually, let's look at the source CSS I cat'd: "padding-bottom: 100%".
-     I will copy that.
-  */
-  padding-bottom: 100%; 
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
   background-color: #374151; /* Gray-700 placeholder */
   background-position: center;
   background-size: cover;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem; /* Increased space between image and text */
   position: relative;
   transition: transform 0.3s ease;
-  overflow: hidden; /* Needed for img absolute */
+  overflow: hidden; 
 }
 
 .card-image img {
@@ -100,21 +92,21 @@
 
 /* Content Below Image */
 .card-content {
-  padding: 0;
+  padding-right: 1rem; /* Spacing for text */
 }
 
 .card-content h3 {
-  font-size: 1.25rem;
+  font-size: 1.5rem; /* Larger title */
   font-weight: 600;
   color: #ffffff;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.75rem; /* More space between title and subtitle */
   margin-top: 0;
 }
 
 .card-content p {
   color: #9ca3af; /* Gray-400 */
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 /* Controls - Bottom Right */
