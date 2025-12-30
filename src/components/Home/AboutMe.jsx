@@ -13,8 +13,7 @@ export default function Skillset(){
     <div className="about-container">
 
     <p className="about-description">
-    We engineer digital experiences that <span className="highlight-text">resonate</span> with purpose and precision.
-    </p>
+    I am a creative technologist interested in building <span className="highlight-text">meaningful</span> digital products, services and experiences. </p> 
     <Link to="/about" className="about-btn">Find Out More ↗</Link>
     </div>
     </div>
