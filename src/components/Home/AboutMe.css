@@ -35,13 +35,23 @@
 }
 
 .about-description {
-  color: rgb(255, 255, 255);  /*adjust for light mode*/
+  color: rgb(255, 255, 255);
   border-radius: 1.5rem;
   border: none;
   padding: 1.5rem 2rem;
-  font-size: 40px; /* Increased font size */
+  font-size: 3.5rem; /* Significantly increased font size to match reference */
+  font-weight: 500;
+  line-height: 1.2;
   text-align: center;
   box-sizing: border-box;
+  max-width: 900px; /* Limit width to force line breaks similar to the image if needed */
+  margin: 0 auto;
+}
+
+.highlight-text {
+  font-style: italic;
+  font-family: serif; /* Use a serif font for the contrast */
+  color: #666; /* Darker gray/dimmed color */
 }
 
 @media (max-width: 768px) {

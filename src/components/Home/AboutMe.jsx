@@ -13,7 +13,8 @@ export default function Skillset(){
     <div className="about-container">
 
     <p className="about-description">
-    I’m a full-stack developer and creative technologist based in Stockholm, with a background in project management. <br /> I thrive on solving complex challenges and enjoy crafting web applications as immersive, user-driven digital experiences.  </p>
+    We engineer digital experiences that <span className="highlight-text">resonate</span> with purpose and precision.
+    </p>
     <Link to="/about" className="about-btn">Find Out More ↗</Link>
     </div>
     </div>

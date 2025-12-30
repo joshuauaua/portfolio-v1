@@ -6,28 +6,28 @@ import BubbleMenu from "./BubbleMenu";
 const navItems = [
   {
     label: 'home',
-    href: '/#home',
+    href: '/',
     ariaLabel: 'Home',
     rotation: -8,
     hoverStyles: { bgColor: '#3b82f6', textColor: '#ffffff' }
   },
   {
     label: 'about',
-    href: '/#about',
+    href: '/about',
     ariaLabel: 'About',
     rotation: 8,
     hoverStyles: { bgColor: '#10b981', textColor: '#ffffff' }
   },
   {
     label: 'projects',
-    href: '/#projects',
+    href: '/projects',
     ariaLabel: 'Projects',
     rotation: 8,
     hoverStyles: { bgColor: '#f59e0b', textColor: '#ffffff' }
   },
   {
     label: 'contact',
-    href: '/#contact',
+    href: '/contact',
     ariaLabel: 'Contact',
     rotation: -8,
     hoverStyles: { bgColor: '#8b5cf6', textColor: '#ffffff' }
@@ -44,9 +44,9 @@ export default function Navbar() {
       menuContentColor="#ffffff" 
       useFixedPosition={true}
       animationEase="back.out(1.5)"
-      animationDuration={0.5}
+      animationDuration={.8}
       staggerDelay={0.12}
-      className="fixed top-10 w-full z-50" 
+      className="fixed top-15 w-full z-50" 
     />
   );
 }
