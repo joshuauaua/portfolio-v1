@@ -13,7 +13,7 @@ export default function Footer() {
             href="https://github.com/joshuauaua"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium hover:text-white transition-colors duration-300"
+            className="text-sm font-medium hover:text-[#3b82f6] transition-colors duration-300"
           >
             GitHub
           </a>
@@ -21,7 +21,7 @@ export default function Footer() {
             href="https://www.linkedin.com/in/joshuauaua/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium hover:text-white transition-colors duration-300"
+            className="text-sm font-medium hover:text-[#3b82f6] transition-colors duration-300"
           >
             LinkedIn
           </a>
@@ -29,7 +29,7 @@ export default function Footer() {
             href="https://discord.com/users/769115419692105759"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium hover:text-white transition-colors duration-300"
+            className="text-sm font-medium hover:text-[#3b82f6] transition-colors duration-300"
           >
             Discord
           </a>
@@ -37,7 +37,7 @@ export default function Footer() {
             href="https://sonicassembly.substack.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium hover:text-white transition-colors duration-300"
+            className="text-sm font-medium hover:text-[#3b82f6] transition-colors duration-300"
           >
             Substack
           </a>
@@ -45,7 +45,7 @@ export default function Footer() {
             href="https://www.instagram.com/joshuauaua/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium hover:text-white transition-colors duration-300"
+            className="text-sm font-medium hover:text-[#3b82f6] transition-colors duration-300"
           >
             Instagram
           </a>
@@ -53,7 +53,7 @@ export default function Footer() {
             href="mailto:joshjoelng@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium hover:text-white transition-colors duration-300"
+            className="text-sm font-medium hover:text-[#3b82f6] transition-colors duration-300"
           >
             Email
           </a>

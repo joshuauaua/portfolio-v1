@@ -31,7 +31,7 @@
 
 .about-btn:hover {
   cursor: pointer;
-  color: #2ecc71;
+  color: #f59e0b; /* Orange */
 }
 
 .about-description {
@@ -51,7 +51,7 @@
 .highlight-text {
   font-style: italic;
   font-family: serif; /* Use a serif font for the contrast */
-  color: #666; /* Darker gray/dimmed color */
+  color: #f59e0b; /* Orange */
 }
 
 @media (max-width: 768px) {

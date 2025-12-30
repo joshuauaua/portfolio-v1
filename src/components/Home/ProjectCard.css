@@ -1,7 +1,7 @@
 .project-card {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
-  box-shadow: 0 0 30px rgba(0, 255, 135, 0.08);
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.08); /* Orange tint */
   width: 100%;
   aspect-ratio: 1 / 1; 
   display: flex;

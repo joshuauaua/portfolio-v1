@@ -66,13 +66,13 @@
 
 .btn-link:hover{
   cursor: pointer;
-  color: #b8b8b8;
+  color: #3b82f6; /* Blue */
   text-decoration: underline;
 
 }
 .hero-btn:hover {
   cursor: pointer;
-  color: #b8b8b8
+  color: #3b82f6 /* Blue */
 }
 
 @media (max-width: 768px) {

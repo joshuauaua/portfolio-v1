@@ -28,14 +28,13 @@
 .slider-container {
   display: flex;
   flex-direction: column;
-  /* Stack track and controls vertically */
+  position: relative; /* Anchor for absolute buttons */
 }
 
 .slider-track-container {
   overflow: hidden;
   width: 100%;
-  margin-bottom: 1.5rem;
-  /* Space between cards and controls */
+  margin-bottom: 0; /* Remove bottom margin as controls are moving */
 }
 
 .slider-track {
@@ -109,32 +108,36 @@
   line-height: 1.6;
 }
 
-/* Controls - Bottom Right */
-.controls-container {
-  display: flex;
-  justify-content: flex-end;
-  /* Align right */
-  gap: 10px;
-  padding-right: 10px;
-}
-
 .nav-button {
-  background-color: #1f2937; /* Gray-800 */
-  border: none;
-  border-radius: 0;
-  /* Square/Rectangular buttons */
-  width: 48px;
-  height: 48px;
+  background-color: #000000; /* Black */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for visibility */
+  border-radius: 50%; /* Circular */
+  width: 56px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s;
   color: #ffffff;
+  position: absolute;
+  top: 40%; /* Align roughly with image center */
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.nav-button.prev {
+  left: -70px;
+}
+
+.nav-button.next {
+  right: -70px;
 }
 
 .nav-button:hover {
-  background-color: #374151; /* Gray-700 */
+  background-color: #8b5cf6; /* Purple */
+  color: white;
+  border-color: #8b5cf6;
 }
 
 .nav-button:disabled {
