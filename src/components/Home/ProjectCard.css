@@ -1,11 +1,7 @@
 .project-card {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
   box-shadow: 0 0 30px rgba(0, 255, 135, 0.08);
-  /* Make it square-ish or at least fixed aspect ratio container behavior handled by parent usually, 
-     but here we define the card content structure */
   width: 100%;
   aspect-ratio: 1 / 1; 
   display: flex;
@@ -18,8 +14,6 @@
 
 .project-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 0 40px rgba(46, 204, 113, 0.2);
-  border-color: rgba(46, 204, 113, 0.3);
 }
 
 .project-image-container {
@@ -30,7 +24,7 @@
 
 .project-image {
   width: 100%;
-  height: 100%;
+  height: 60%;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
@@ -65,7 +59,3 @@
   overflow: hidden;
 }
 
-/* Hide tags and button for this specific design requirement "image, title and description" 
-   but keep them if passed? The requirement says "square card with an image, title and description".
-   I'll hide tags/buttons if they exist in data to adhere strictly to visual design req, 
-   or just not render them in JSX. I'll handle it in JSX. */

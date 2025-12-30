@@ -1,9 +1,8 @@
-/* Dark Theme Container */
+/* Dark Theme Container from Portfolio */
 .project-gallery-container {
   width: 100%;
   padding: 4rem 1rem;
   background-color: #000000;
-  /* Black background */
   color: #ffffff;
   overflow: hidden;
   position: relative;
@@ -25,62 +24,69 @@
   z-index: 1;
 }
 
-/* Header */
-.gallery-header {
-  text-align: center;
-  margin-bottom: 3rem;
+/* Slider Layout */
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  /* Stack track and controls vertically */
 }
 
-.gallery-header h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-}
-
-.gallery-header p {
-  color: #9ca3af;
-  /* Gray-400 */
-  font-size: 1.1rem;
-}
-
-/* Grid Layout */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+.slider-track-container {
+  overflow: hidden;
   width: 100%;
+  margin-bottom: 1.5rem;
+  /* Space between cards and controls */
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 40px;
 }
 
 /* Card Styling */
 .project-card {
-  /* Let grid handle width */
-  width: 100%;
+  /* 3 cards visible */
+  flex: 0 0 calc((100% - 80px) / 3);
+  /* Explanation: (100% - 2 * 40px gap) / 3 items */
   
   /* Remove card background/shadow for cleaner look on black */
   background: transparent;
-  border: none;
   border-radius: 0;
   box-shadow: none;
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
 }
 
-/* No hover effect requested */
+.project-card:hover .card-image {
+  transform: scale(1.02);
+  /* Subtle zoom on image only */
+}
 
-/* Image - Landscape Ratio (16:9 approx, user asked for "Landscape") */
+/* Image - Square Ratio */
 .card-image {
   width: 100%;
-  aspect-ratio: 16 / 9; 
-  background-color: #374151;
-  /* Gray-700 placeholder */
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio (9/16 = 0.5625) */
+  /* Was 100% (Square) in source, but user previously requested 16:9. 
+     Source code provided creates square (padding-bottom: 100%).
+     User said "Refactor ... completely. Copy ... files".
+     However, usually users prefer keeping valid requirements like 16:9 unless "Copy completely" overrides.
+     "Copy ... files" suggests exact copy. 
+     BUT previously "Cards are way too big now". 16:9 is shorter than square.
+     I will stick to 16:9 (padding-bottom: 56.25%) as a safe middle ground vs square which takes more vertical space.
+     Actually, if I strictly copy, it's square. I will interpret "Copy ... files" as structure, but maybe keep some successful refinements?
+     "Refactor ... completely" implies the *source* is the source of truth.
+     I will use 100% (Square) as per source code. If user complains it's too big, they can ask to revert.
+     Actually, let's look at the source CSS I cat'd: "padding-bottom: 100%".
+     I will copy that.
+  */
+  padding-bottom: 100%; 
+  background-color: #374151; /* Gray-700 placeholder */
   background-position: center;
   background-size: cover;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   position: relative;
-  overflow: hidden;
-  border-radius: 0; /* No rounded corners */
+  transition: transform 0.3s ease;
+  overflow: hidden; /* Needed for img absolute */
 }
 
 .card-image img {
@@ -99,27 +105,62 @@
 
 .card-content h3 {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #ffffff;
   margin-bottom: 0.25rem;
   margin-top: 0;
 }
 
 .card-content p {
-  color: #9ca3af;
-  /* Gray-400 */
-  font-size: 1rem;
+  color: #9ca3af; /* Gray-400 */
+  font-size: 0.95rem;
   line-height: 1.5;
-  font-weight: 300;
 }
 
-/* Remove Controls styles */
+/* Controls - Bottom Right */
+.controls-container {
+  display: flex;
+  justify-content: flex-end;
+  /* Align right */
+  gap: 10px;
+  padding-right: 10px;
+}
+
+.nav-button {
+  background-color: #1f2937; /* Gray-800 */
+  border: none;
+  border-radius: 0;
+  /* Square/Rectangular buttons */
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #ffffff;
+}
+
+.nav-button:hover {
+  background-color: #374151; /* Gray-700 */
+}
+
+.nav-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
-  .projects-grid {
-    /* 1 card per row */
-    grid-template-columns: 1fr;
-    gap: 2rem;
+@media (max-width: 1024px) {
+  .project-card {
+    /* 2 cards */
+    flex: 0 0 calc((100% - 40px) / 2);
+  }
+}
+
+@media (max-width: 640px) {
+  .project-card {
+    /* 1 card */
+    flex: 0 0 100%;
   }
 }

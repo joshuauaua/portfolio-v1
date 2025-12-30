@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import logo from "../../assets/logowhite.png";
 import { HashLink } from "react-router-hash-link";
-import ThemeToggle from "../Common/ThemeToggle";
+
 import { useTheme } from "../../context/ThemeContext";
 
 export default function Navbar() {
@@ -42,9 +42,7 @@ export default function Navbar() {
             <img
               src={logo}
               alt="Joshua Ng Logo"
-              className={`h-12 w-auto transition-transform duration-300 hover:scale-105 ${
-                theme === "light" ? "invert" : ""
-              }`}
+              className="h-12 w-auto transition-transform duration-300 hover:scale-105"
             />
           </HashLink>
         </div>
@@ -65,13 +63,13 @@ export default function Navbar() {
             ))}
           </ul>
           <div className="pl-6 border-l border-neutral-200 dark:border-white/10">
-            <ThemeToggle />
+
           </div>
         </div>
 
         {/* Mobile Hamburger & Toggle */}
         <div className="flex items-center gap-4 md:hidden z-50">
-          <ThemeToggle />
+
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="flex flex-col justify-between w-8 h-6 cursor-pointer group"
