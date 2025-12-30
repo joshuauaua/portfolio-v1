@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import LightRays from "./LightRays.jsx";
+import LiquidEther from "./LiquidEther.jsx";
 import "./SelectedProjects.css";
 import selectedProjectsData from "../../data/selected-projects.json";
 import restaurant from "../../assets/restaurant.png";
@@ -42,16 +42,23 @@ export default function SelectedProjects() {
   return (
     <div className="project-gallery-container" id="projects">
       <div className="selected-projects-background">
-        <div style={{ width: "100%", height: "100%", position: "relative" }}>
-          <LightRays
-            particleColors={["#ffffff", "#ffffff"]}
-            particleCount={200}
-            particleSpread={10}
-            speed={0.1}
-            particleBaseSize={100}
-            moveParticlesOnHover={true}
-            alphaParticles={false}
-            disableRotation={false}
+        <div style={{ width: "100%", height: 600, position: "relative" }}>
+          <LiquidEther
+            colors={[ '#ffffff', '#808080', '#000000' ]}
+            mouseForce={20}
+            cursorSize={100}
+            isViscous={false}
+            viscous={30}
+            iterationsViscous={32}
+            iterationsPoisson={32}
+            resolution={0.5}
+            isBounce={false}
+            autoDemo={true}
+            autoSpeed={0.5}
+            autoIntensity={2.2}
+            takeoverDuration={0.25}
+            autoResumeDelay={3000}
+            autoRampDuration={0.6}
           />
         </div>
       </div>
