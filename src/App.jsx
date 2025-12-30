@@ -5,11 +5,12 @@ import Navbar from './components/Layout/Navbar.jsx'
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Projects from './pages/Projects.jsx'
+import { ThemeProvider } from "./context/ThemeContext";
 
 function App() {
 
   return (
-    <>
+    <ThemeProvider>
       <BrowserRouter basename={import.meta.env.DEV ? '/' : '/'}>
       <Navbar />
       <Routes>
@@ -19,7 +20,7 @@ function App() {
       </Routes>
       <Footer />
       </BrowserRouter>
-    </>
+    </ThemeProvider>
   )
 }
 

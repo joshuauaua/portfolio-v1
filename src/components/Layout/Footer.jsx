@@ -4,14 +4,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
         {/* Left Section - Identity */}
         <div className="flex flex-col gap-2">
-          <h2 className="text-xl font-bold tracking-wider text-white">JOSHUA NG</h2>
-          <p className="text-sm font-light text-white/60">Stockholm, Sweden</p>
-          <a
-            href="mailto:joshjoelng@gmail.com"
-            className="text-sm font-light text-white/60 hover:text-white transition-colors duration-300"
-          >
-            joshjoelng@gmail.com
-          </a>
+          <p className="text-sm font-light text-white/60">Made with ❤️ in Stockholm</p>
         </div>
 
         {/* Right Section - Social Links */}
@@ -56,13 +49,15 @@ export default function Footer() {
           >
             Instagram
           </a>
+          <a
+            href="mailto:joshjoelng@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium hover:text-white transition-colors duration-300"
+          >
+            Email
+          </a>
         </div>
-      </div>
-
-      {/* Bottom Copyright */}
-      <div className="max-w-6xl mx-auto mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-white/40">
-        <p>&copy; {new Date().getFullYear()} Joshua Ng. All rights reserved.</p>
-        <p className="mt-2 md:mt-0">Made with ❤️ in Stockholm</p>
       </div>
     </footer>
   );
