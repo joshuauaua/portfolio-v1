@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Hyper Radio",
+    "description": "Web radio music streaming platform.",
+    "image": "restaurant"
+  },
+  {
+    "title": "Open Audio Kit",
+    "description": "Open source audio streaming kit in C#.",
+    "image": "restaurant"
+  },
+  {
+    "title": "Sonic Assembly",
+    "description": "Creative sound studio website.",
+    "image": "buildboard"
+  },
+  {
+    "title": "Velosonics",
+    "description": "Audio classification tool with TF.js.",
+    "image": "velosonics"
+  },
+  {
+    "title": "Project 5",
+    "description": "Another amazing project to showcase.",
+    "image": "buildboard"
+  }
+]

@@ -9,13 +9,9 @@ export default function LetsChat(){
 
     <>
 
-    <div className="contact-container">
-
-
-    <h1 className="lets-chat" id="contact">LET'S CHAT!</h1>
-    <a className="contact-btn"  href="mailto:joshjoelng@gmail.com" target="_blank">Email Me ↗</a>
-
-   
+    <div className="contact-container" id="contact">
+      <h1 className="lets-chat">I would love to<br />hear from you!</h1>
+      <a className="contact-btn" href="mailto:joshjoelng@gmail.com" target="_blank">joshjoelng@gmail.com →</a>
     </div>
      </>
   )

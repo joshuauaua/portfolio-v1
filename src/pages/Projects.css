@@ -52,12 +52,12 @@
 }
 
 .projects-grid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
   width: 100%;
   max-width: 1200px;
-  align-items: center;
+  /* align-items: center;  Removed as grid handles items */
 }
 
 @media (max-width: 768px) {
@@ -67,5 +67,10 @@
   
   .projects-filter-container {
     gap: 0.5rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    max-width: 400px;
   }
 }

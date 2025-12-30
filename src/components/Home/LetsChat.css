@@ -1,45 +1,56 @@
-.contact-container{
+.contact-container {
   background-color: black;
   display: flex;
-  flex-direction: column;   /* stack "Let's Chat" and button vertically */
-  align-items: center;      /* center items horizontally */
-
-}
-
-
-.lets-chat{
-  font-size: 5rem;
-  padding: 3rem;
-  background-color: black;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 6rem 5vw;
+  min-height: 400px;
   color: white;
+  box-sizing: border-box;
 }
 
+.lets-chat {
+  font-size: 4.5rem;
+  font-weight: 500;
+  line-height: 1.1;
+  text-align: left;
+  background-color: transparent;
+  padding: 0;
+  color: white;
+  max-width: 60%;
+}
 
 .contact-btn {
-  position: relative;
-  background-color: transparent;
-  font-size: 1.2rem; /* Increased font size */
-  color: rgb(255, 255, 255);  /*adjust for light mode*/
+  font-size: 2.5rem;
+  color: white;
+  text-decoration: none;
   border: none;
-  text-align: center;
-  width: fit-content;
-  align-self: center;
-  padding: 20px;
-  padding-top: 40px;
-  margin-bottom: 60px;
+  background: transparent;
+  padding: 0;
+  margin-bottom: 0.5rem; /* Align baseline visually */
+  transition: all 0.3s ease;
 }
 
 .contact-btn:hover {
-  cursor: pointer;
-  color: #2ecc71;
+  transform: translateX(10px);
+  color: #ccc;
 }
 
-
-@media screen and (max-width: 768px) {
-  .lets-chat {
-    font-size: 8rem;
-    padding: 2rem;
-
+@media screen and (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 4rem 2rem;
+    align-items: flex-start;
+    gap: 4rem;
   }
-  
+
+  .lets-chat {
+    font-size: 3.5rem;
+    max-width: 100%;
+  }
+
+  .contact-btn {
+    font-size: 1.8rem;
+    align-self: flex-start;
+  }
 }

@@ -1,7 +1,6 @@
 .selected-projects-container {
   position: relative;
   width: 100%;
-  min-height: 200vh;
   padding: 6rem 2rem;
   box-sizing: border-box;
   background: transparent;
@@ -29,8 +28,126 @@
   color: #fff;
   margin-bottom: 4rem;
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
   padding-bottom: 1rem;
+}
+
+.selected-projects-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Slider / Gallery Styles */
+.slider-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.slider-track-container {
+  width: 100%;
+  overflow: hidden;
+  /* Optional: padding if needed */
+}
+
+.slider-track {
+  display: flex;
+  gap: 20px; /* The gap used in calculations */
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  width: 100%;
+}
+
+.project-card {
+  /* 
+     With N=3 visible items and G=20px gap:
+     ItemWidth = (100% - (N-1)*G) / N 
+     = (100% - 2*20px) / 3 
+     = (100% - 40px) / 3
+     
+     In flex shorthand: flex: 0 0 calc(...)
+  */
+  flex: 0 0 calc((100% - 40px) / 3);
+  background: rgba(20, 20, 20, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 1.5rem;
+  color: #fff;
+}
+
+.card-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.card-content p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #aaa;
+  line-height: 1.5;
+}
+
+.controls-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.nav-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.nav-button:hover {
+  background: #fff;
+  color: #000;
+  transform: scale(1.1);
 }
 
 .selected-projects-btn {
@@ -51,9 +168,21 @@
   transform: translateY(-2px);
 }
 
+@media (max-width: 1024px) {
+  .project-card {
+    /* 2 items visible: (100% - 20px) / 2 */
+    flex: 0 0 calc((100% - 20px) / 2);
+  }
+}
+
 @media (max-width: 768px) {
   .selected-projects-title {
     font-size: 2.5rem;
     margin-bottom: 2rem;
+  }
+  
+  .project-card {
+    /* 1 item visible: 100% */
+    flex: 0 0 100%;
   }
 }

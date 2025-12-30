@@ -4,15 +4,16 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   box-shadow: 0 0 30px rgba(0, 255, 135, 0.08);
-  padding: 2rem 2.5rem;
-  color: white;
+  /* Make it square-ish or at least fixed aspect ratio container behavior handled by parent usually, 
+     but here we define the card content structure */
   width: 100%;
-  max-width: 900px;
-  margin: 2.5rem 0;
-  transition: all 0.4s ease;
+  aspect-ratio: 1 / 1; 
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  padding: 0; /* Remove padding to let image fill */
+  position: relative;
 }
 
 .project-card:hover {
@@ -21,73 +22,50 @@
   border-color: rgba(46, 204, 113, 0.3);
 }
 
+.project-image-container {
+  width: 100%;
+  height: 60%;
+  overflow: hidden;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-details {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .project-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   color: #fff;
 }
 
 .project-description {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 0.95rem;
+  line-height: 1.4;
   color: #ccc;
-  margin-bottom: 1.5rem;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-bottom: 2rem;
-}
-
-.project-tag {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 30px;
-  padding: 0.4rem 0.9rem;
-  font-size: 0.85rem;
-  font-family: monospace;
-  color: #fff;
-  transition: all 0.3s ease;
-}
-
-.project-tag:hover {
-  background-color: rgba(46, 204, 113, 0.2);
-  border-color: rgba(46, 204, 113, 0.4);
-}
-
-.project-button {
-  align-self: flex-end;
-  font-size: 1.1rem;
-  color: #2ecc71;
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.project-button:hover {
-  color: #7fffd4;
-  transform: translateX(4px);
-}
-
-@media (max-width: 768px) {
-  .project-card {
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-  }
-
-  .project-title {
-    font-size: 1.6rem;
-  }
-
-  .project-description {
-    font-size: 1rem;
-  }
-
-  .project-button {
-    align-self: center;
-  }
-}
+/* Hide tags and button for this specific design requirement "image, title and description" 
+   but keep them if passed? The requirement says "square card with an image, title and description".
+   I'll hide tags/buttons if they exist in data to adhere strictly to visual design req, 
+   or just not render them in JSX. I'll handle it in JSX. */
