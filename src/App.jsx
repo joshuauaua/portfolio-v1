@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {HashRouter, Routes, Route} from 'react-router-dom'
 import Footer from './components/Layout/Footer.jsx'
 import Navbar from './components/Layout/Navbar.jsx'
 import Home from './pages/Home.jsx'
@@ -12,7 +12,7 @@ function App() {
 
   return (
     <ThemeProvider>
-      <BrowserRouter basename={import.meta.env.DEV ? '/' : '/'}>
+      <HashRouter>
       <Navbar />
       <Routes>
       <Route path="/" element={<Home />}/>
@@ -21,7 +21,7 @@ function App() {
       <Route path="/project/:id" element={<ProjectTemplate />}/>
       </Routes>
       <Footer />
-      </BrowserRouter>
+      </HashRouter>
     </ThemeProvider>
   )
 }

@@ -1,24 +1,26 @@
 
-// Import assets if needed, or use paths as strings if they are in public or imported here
-// For now, I will use placeholder strings or imported assets in the component if dynamic imports are tricky without a mapping.
-// Common pattern: store paths as strings and have a utility or import them all here. 
-// Given Vite, dynamic imports of assets from strings can be tricky. 
-// Best practice: Import images at the top if there are few, or use specific folder structure.
-// For this portfolio, let's assume valid paths or we import them in the array (which functions in Vite).
-
 import joshua from '/src/assets/joshua.png';
+import projSonic1 from '/src/assets/projSonic1.png';
+import projSonic2 from '/src/assets/projSonic2.png';
+import projSonic3 from '/src/assets/projSonic3.png';
+import projSonic4 from '/src/assets/projSonic4.png';
+
+import projAudioMl1 from '/src/assets/projAudioMl1.png';
+import projAudioMl2 from '/src/assets/projAudioMl2.png';
+import projAudioMl3 from '/src/assets/projAudioMl3.png';
+import projAudioMl4 from '/src/assets/projAudioMl4.png';
+
 
 export const projects = [
   {
-    id: 'sample-project',
-    title: 'Sample Project Title',
-    bannerImage: joshua, // Using existing asset for now
+    id: 'sonic-assembly',
+    title: 'Sonic Assembly',
+    bannerImage: projSonic1,
     video: 'https://www.w3schools.com/html/mov_bbb.mp4', // Placeholder video
     year: '2025',
-    tags: ['React', 'Three.js', 'Web Audio'],
-    technologies: ['React', 'Three.js', 'Web Audio API', 'GSAP'], // Explicit technologies list
-    client: 'Google Creative Lab',
-    collaborators: 'Jane Doe, John Smith',
+    tags: ['Web'],
+    technologies: ['React'],
+    client: 'Sonic Assembly',
     description: {
       situation: 'The client needed a way to visualize complex audio data in real-time for a web experiment.',
       task: 'My role was to build the frontend visualization engine and integrate it with the backend ML model.',
@@ -26,13 +28,12 @@ export const projects = [
       result: 'The experiment was launched successfully and featured on Awwwards. It engaged over 100k users in the first week.',
     },
     images: [
-      joshua, // Placeholder
-      joshua, // Placeholder
-      joshua, // Placeholder
-      joshua, // Placeholder
+      projSonic1,
+      projSonic2,
+      projSonic3,
+      projSonic4,
     ],
-    liveLink: 'https://example.com',
-    repoLink: 'https://github.com',
+    liveLink: 'https://sonicassembly.se',
+    repoLink: 'https://github.com/joshuauaua/Sonic-Assembly',
   },
-  // Add more projects here
 ];
