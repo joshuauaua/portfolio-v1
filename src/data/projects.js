@@ -16,6 +16,7 @@ export const projects = [
     video: 'https://www.w3schools.com/html/mov_bbb.mp4', // Placeholder video
     year: '2025',
     tags: ['React', 'Three.js', 'Web Audio'],
+    technologies: ['React', 'Three.js', 'Web Audio API', 'GSAP'], // Explicit technologies list
     client: 'Google Creative Lab',
     collaborators: 'Jane Doe, John Smith',
     description: {

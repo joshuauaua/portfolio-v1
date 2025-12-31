@@ -37,6 +37,9 @@ export default function ProjectTemplate() {
           {project.collaborators && (
             <div className="meta-item"><span>Collaborators:</span> {project.collaborators}</div>
           )}
+          {project.technologies && (
+             <div className="meta-item"><span>Technologies:</span> {project.technologies.join(', ')}</div>
+          )}
         </div>
       </div>
 
