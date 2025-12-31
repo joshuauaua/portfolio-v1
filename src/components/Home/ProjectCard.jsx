@@ -1,4 +1,5 @@
 import "./ProjectCard.css";
+import { Link } from 'react-router-dom';
 /* 
  Square card with image, title, description.
  Accepting 'image' prop which can be a string URL/import.
@@ -18,7 +19,8 @@ export default function ProjectCard({ project }) {
   // Use bannerImage if available (new format), fallback to image
   const displayImage = bannerImage || image;
 
-  return (
+  // Wrap content in Link if id available
+  const CardContent = (
     <div className="project-card">
       <div className="project-image-container">
         {displayImage ? (
@@ -34,5 +36,13 @@ export default function ProjectCard({ project }) {
         </p>
       </div>
     </div>
+  );
+
+  return project.id ? (
+    <Link to={`/project/${project.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+      {CardContent}
+    </Link>
+  ) : (
+    CardContent
   );
 }

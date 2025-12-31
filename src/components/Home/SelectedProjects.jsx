@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import LiquidEther from "./LiquidEther.jsx";
 import "./SelectedProjects.css";
 import selectedProjectsData from "../../data/selected-projects.json";
@@ -79,17 +80,31 @@ export default function SelectedProjects() {
                 /* Note: gap is 40px in CSS, so logic needs to match gap */
               }}
             >
-              {projects.map((project, index) => (
-                <div key={index} className="project-card">
-                  <div className="card-image" style={{backgroundColor: project.color || '#374151'}}>
-                    {project.image && <img src={project.image} alt={project.title} />}
+              {projects.map((project, index) => {
+                const CardInner = (
+                  <div className="project-card">
+                    <div className="card-image" style={{backgroundColor: project.color || '#374151'}}>
+                      {project.image && <img src={project.image} alt={project.title} />}
+                    </div>
+                    <div className="card-content">
+                      <h3>{project.title}</h3>
+                      <p>{project.description}</p>
+                    </div>
                   </div>
-                  <div className="card-content">
-                    <h3>{project.title}</h3>
-                    <p>{project.description}</p>
+                );
+
+                return (
+                  <div key={index} style={{flexShrink: 0, width: 'calc((100% - (2 * 40px)) / 3)'}}>
+                     {project.id ? (
+                        <Link to={`/project/${project.id}`} style={{textDecoration: 'none', color: 'inherit', display: 'block'}}>
+                           {CardInner}
+                        </Link>
+                     ) : (
+                        CardInner
+                     )}
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
