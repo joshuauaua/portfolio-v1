@@ -133,6 +133,9 @@
   justify-content: center;
   pointer-events: none;
   z-index: 98;
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent dark background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
 }
 
 .bubble-menu-items.fixed {

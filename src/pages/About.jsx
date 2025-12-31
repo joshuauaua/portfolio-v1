@@ -1,3 +1,4 @@
+import LetsChat from "../components/Home/LetsChat.jsx";
 import Silk from "../components/Home/Silk.jsx";
 import './About.css';
 import joshua from '/src/assets/joshua.png';
@@ -64,6 +65,7 @@ export default function MainAbout() {
 
         </div>
       </div>
+      <LetsChat />
     </>
   );
 }

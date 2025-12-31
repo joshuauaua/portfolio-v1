@@ -1,0 +1,166 @@
+.project-template {
+  color: white;
+  min-height: 100vh;
+  padding-bottom: 4rem;
+  background-color: #000;
+}
+
+.project-banner {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  display: block;
+}
+
+.project-meta-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem 5%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: #000;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.meta-left h1 {
+  font-size: 3rem;
+  margin: 0 0 1rem 0;
+  line-height: 1.1;
+}
+
+.meta-tags {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.meta-tag {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+.meta-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: right;
+  min-width: 200px;
+}
+
+.meta-item {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.meta-item span {
+  font-weight: bold;
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.project-content {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.project-video-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #111;
+  margin-bottom: 4rem;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.project-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.star-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.star-section:last-child {
+  border-bottom: none;
+}
+
+.star-label {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #bbeae7; /* Theme color */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.star-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 4rem;
+}
+
+.grid-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  aspect-ratio: 4/3;
+}
+
+.project-actions {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 5rem;
+}
+
+.action-btn {
+  padding: 1rem 2rem;
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.action-btn:hover {
+  background: white;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .project-meta-bar {
+    flex-direction: column;
+  }
+  
+  .meta-right {
+    text-align: left;
+  }
+  
+  .star-section {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+}

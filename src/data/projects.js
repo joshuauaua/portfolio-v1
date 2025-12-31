@@ -1,66 +1,37 @@
-import restaurant from "../assets/restaurant.png";
-import buildboard from "../assets/buildboard.png";
-import velosonics from "../assets/velosonics.png";
+
+// Import assets if needed, or use paths as strings if they are in public or imported here
+// For now, I will use placeholder strings or imported assets in the component if dynamic imports are tricky without a mapping.
+// Common pattern: store paths as strings and have a utility or import them all here. 
+// Given Vite, dynamic imports of assets from strings can be tricky. 
+// Best practice: Import images at the top if there are few, or use specific folder structure.
+// For this portfolio, let's assume valid paths or we import them in the array (which functions in Vite).
+
+import joshua from '/src/assets/joshua.png';
 
 export const projects = [
   {
-    title: "Hyper Radio",
-    tags: [
-      ".NET Core WebAPI",
-      "C#",
-      "HTTP LiveStreaming",
-      "React",
-      "FFMPEG",
-      "Entity Framework",
-      "SQL Server",
-      "WebAudio API",
+    id: 'sample-project',
+    title: 'Sample Project Title',
+    bannerImage: joshua, // Using existing asset for now
+    video: 'https://www.w3schools.com/html/mov_bbb.mp4', // Placeholder video
+    year: '2025',
+    tags: ['React', 'Three.js', 'Web Audio'],
+    client: 'Google Creative Lab',
+    collaborators: 'Jane Doe, John Smith',
+    description: {
+      situation: 'The client needed a way to visualize complex audio data in real-time for a web experiment.',
+      task: 'My role was to build the frontend visualization engine and integrate it with the backend ML model.',
+      action: 'I used Three.js for high-performance rendering and the Web Audio API to process the raw audio streams. I optimized the particle system to handle 10k+ points at 60fps.',
+      result: 'The experiment was launched successfully and featured on Awwwards. It engaged over 100k users in the first week.',
+    },
+    images: [
+      joshua, // Placeholder
+      joshua, // Placeholder
+      joshua, // Placeholder
+      joshua, // Placeholder
     ],
-    description:
-      "Web radio music streaming platform that allows users to submit mp3 files with accompanying data and tracks get placed in relevant playlists for playback in a stream.",
-    image: restaurant,
-    button: {
-      link: "https://hyperradio.online/",
-      text: "Join Waitlist ↗",
-    },
+    liveLink: 'https://example.com',
+    repoLink: 'https://github.com',
   },
-  {
-    title: "Open Audio Streaming Kit",
-    tags: [
-      ".NET Core WebAPI",
-      "C#",
-      "DI/Repo Pattern",
-      "React",
-      "Entity Framework",
-      "SQL Server",
-    ],
-    description:
-      "Open source audio streaming kit built in C#. Allows users to build their own modular audio streaming platform while taking care of different complex backend services, such as HLS conversion, Blob storage management and persistent audio player frontend.",
-    image: restaurant,
-    button: {
-      link: "https://github.com/joshuauaua/Open-Audio-Streaming-Kit",
-      text: "View Code ↗",
-    },
-  },
-  {
-    title: "Sonic Assembly",
-    tags: ["CSS", "Tailwind CSS", "Html", "Javascript"],
-    description:
-      "I built the website for my company, Sonic Assembly. I aimed to design a 'play-fessional' experience that showcase the different projects I have worked on, but also present the company as a serious collaborator in the industry.",
-    image: buildboard,
-    button: {
-      link: "http://sonicassembly.se/",
-      text: "View Website ↗",
-    },
-  },
-  {
-    title: "Velosonics",
-    tags: ["React", "Bootstrap", "Tensorflow.js", "p5.js"],
-    description:
-      "Commissioned by the Goethe Institutte, an audio classification tool built using Google's Teachable Machine and TensorFlow.js with a React frontend and p5.js for audio visualization. Pilot project tested to detect maintenance issues in delivery bikes in Italy using audio recordings",
-    image: velosonics,
-    button: {
-      link: "https://github.com/joshuauaua/TeachableMachine_React_Audio",
-      text: "View Code ↗",
-    },
-  },
+  // Add more projects here
 ];
