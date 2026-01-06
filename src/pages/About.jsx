@@ -41,28 +41,36 @@ export default function MainAbout() {
           </div>
           <a href={CV} target="_blank" rel="noopener noreferrer" className="about-btn">Check Out My CV ↗</a>
 
-          <div className="expertise-section">
-            <h2 className="expertise-header">My Expertise</h2>
-            <div className="expertise-list">
-               <div className="expertise-category">
-                  <h3>Languages</h3>
-                  <p>JavaScript, C#, HTML/CSS</p>
-               </div>
-               <div className="expertise-category">
-                  <h3>Frameworks & Libraries</h3>
-                  <p>React, .NET, Node.js</p>
-               </div>
-               <div className="expertise-category">
-                  <h3>Creative Tech</h3>
-                  <p>Sound Design, ML, Embedded Programming, Arduino</p>
-               </div>
-               <div className="expertise-category">
-                  <h3>Tools</h3>
-                  <p>Git, Figma, Storyblok</p>
-               </div>
-            </div>
-          </div>
+         <div className="expertise-section">
+          <h2 className="expertise-header">My Expertise</h2>
+          <div className="expertise-list">
+              
+              {/* Core Development Stack */}
+              <div className="expertise-category">
+                  <h3>Fullstack Development</h3>
+                  <p>C#, ASP.NET Core, React, JavaScript, Tailwind CSS</p>
+              </div>
 
+              {/* The "Sonic Assembly" Specialization */}
+              <div className="expertise-category">
+                  <h3>Audio Technologies</h3>
+                  <p>Interactive Audio, Middleware (Wwise/FMOD), Synthesis, FFMPEG</p>
+              </div>
+
+              {/* Hardware & Intelligence */}
+              <div className="expertise-category">
+                  <h3>Creative Tech & AI</h3>
+                  <p>Machine Learning, TensorFlow.js, Embedded (Arduino/RPi), Design Thinking</p>
+              </div>
+
+              {/* Professional Workflow */}
+              <div className="expertise-category">
+                  <h3>DevOps & Tools</h3>
+                  <p>Azure/AWS, CI/CD, Git, Agile, Figma, Storyblok</p>
+              </div>
+              
+          </div>
+      </div>
         </div>
       </div>
       <LetsChat />

@@ -22,8 +22,10 @@ export default function Hero() {
           <p className="hero-intro">Hello! My name is</p>
           <h3 className="hero-description">
             Joshua Ng. <br/>
-            I build web experiences.
           </h3>
+          <h4 className="hero-description">
+            I craft digital solutions for human problems.
+          </h4>
           
           <button className="hero-btn"><a href="#about" className="btn-link">⇊</a></button>
         </div>
