@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import LiquidEther from "./LiquidEther.jsx";
 import "./SelectedProjects.css";
@@ -22,7 +22,23 @@ const projects = selectedProjectsData.map((project) => ({
 
 export default function SelectedProjects() {
   const [startIndex, setStartIndex] = useState(0);
-  const cardsToShow = 3; 
+  const [cardsToShow, setCardsToShow] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setCardsToShow(1);
+      } else if (window.innerWidth < 1024) {
+        setCardsToShow(2);
+      } else {
+        setCardsToShow(3);
+      }
+    };
+
+    handleResize(); // Set initial value
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []); 
 
   const nextSlide = () => {
     if (startIndex < projects.length - cardsToShow) {
@@ -94,7 +110,7 @@ export default function SelectedProjects() {
                 );
 
                 return (
-                  <div key={index} style={{flexShrink: 0, width: 'calc((100% - (2 * 40px)) / 3)'}}>
+                  <div key={index} style={{flexShrink: 0, width: `calc((100% - ((${cardsToShow} - 1) * 40px)) / ${cardsToShow})`}}>
                      {project.id ? (
                         <Link to={`/project/${project.id}`} style={{textDecoration: 'none', color: 'inherit', display: 'block'}}>
                            {CardInner}

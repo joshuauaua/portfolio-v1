@@ -46,7 +46,7 @@ export default function MainAbout() {
             <div className="expertise-list">
                <div className="expertise-category">
                   <h3>Languages</h3>
-                  <p>JavaScript, C#, Python, HTML/CSS</p>
+                  <p>JavaScript, C#, HTML/CSS</p>
                </div>
                <div className="expertise-category">
                   <h3>Frameworks & Libraries</h3>
@@ -54,7 +54,7 @@ export default function MainAbout() {
                </div>
                <div className="expertise-category">
                   <h3>Creative Tech</h3>
-                  <p>Sound Design, ML (Audio), Arduino</p>
+                  <p>Sound Design, ML, Embedded Programming, Arduino</p>
                </div>
                <div className="expertise-category">
                   <h3>Tools</h3>
