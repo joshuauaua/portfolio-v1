@@ -39,6 +39,8 @@ const DEFAULT_ITEMS = [
 
 export default function BubbleMenu({
   logo,
+  logoAlt,
+  cleanLogo = false,
   onMenuClick,
   className,
   style,
@@ -53,6 +55,7 @@ export default function BubbleMenu({
 }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
+  const [isLogoHovered, setIsLogoHovered] = useState(false);
 
   const overlayRef = useRef(null);
   const bubblesRef = useRef([]);
@@ -145,12 +148,20 @@ export default function BubbleMenu({
     return () => window.removeEventListener('resize', handleResize);
   }, [isMenuOpen, menuItems]);
 
+  const currentLogo = (logoAlt && isLogoHovered) ? logoAlt : logo;
+
   return (
     <>
       <nav className={containerClassName} style={style} aria-label="Main navigation">
-        <div className="bubble logo-bubble" aria-label="Logo" style={{ background: menuBg }}>
+        <div 
+          className={`bubble logo-bubble ${cleanLogo ? 'clean-logo' : ''}`} 
+          aria-label="Logo" 
+          style={{ background: cleanLogo ? 'transparent' : menuBg }}
+          onMouseEnter={() => setIsLogoHovered(true)}
+          onMouseLeave={() => setIsLogoHovered(false)}
+        >
           <Link to="/" className="logo-content" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%' }}>
-            {typeof logo === 'string' ? <img src={logo} alt="Logo" className="bubble-logo" /> : logo}
+            {typeof currentLogo === 'string' ? <img src={currentLogo} alt="Logo" className="bubble-logo" /> : currentLogo}
           </Link>
         </div>
 

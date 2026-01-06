@@ -37,6 +37,16 @@
   will-change: transform;
 }
 
+.bubble-menu .logo-bubble.clean-logo {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+  width: calc(var(--bubble-size) * 3) !important;
+  height: calc(var(--bubble-size) * 3) !important;
+  min-height: calc(var(--bubble-size) * 3) !important;
+}
+
 .bubble-menu .logo-bubble {
   width: var(--bubble-size);
   min-height: var(--bubble-size);

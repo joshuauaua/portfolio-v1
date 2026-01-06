@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import logo from "../../assets/logowhite.png";
+import logo from "../../assets/joshuanglogo.png";
+import logoAlt from "../../assets/joshuanglogoalt.png";
 import BubbleMenu from "./BubbleMenu";
 
 // Define menu items
@@ -38,6 +39,8 @@ export default function Navbar() {
   return (
     <BubbleMenu
       logo={logo}
+      logoAlt={logoAlt}
+      cleanLogo={true}
       items={navItems}
       menuAriaLabel="Toggle navigation"
       menuBg="#000000" 
