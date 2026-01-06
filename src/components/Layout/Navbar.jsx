@@ -27,7 +27,7 @@ const navItems = [
   },
   {
     label: 'contact',
-    href: '/contact',
+    href: '/#contact',
     ariaLabel: 'Contact',
     rotation: -8,
     hoverStyles: { bgColor: '#8b5cf6', textColor: '#ffffff' }

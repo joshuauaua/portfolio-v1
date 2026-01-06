@@ -1,5 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
+
 import { gsap } from 'gsap';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 import './BubbleMenu.css';
 
@@ -13,28 +16,21 @@ const DEFAULT_ITEMS = [
   },
   {
     label: 'about',
-    href: '#',
+    href: '/about',
     ariaLabel: 'About',
     rotation: 8,
     hoverStyles: { bgColor: '#10b981', textColor: '#ffffff' }
   },
   {
     label: 'projects',
-    href: '#',
+    href: '/projects',
     ariaLabel: 'Documentation',
     rotation: 8,
     hoverStyles: { bgColor: '#f59e0b', textColor: '#ffffff' }
   },
   {
-    label: 'blog',
-    href: '#',
-    ariaLabel: 'Blog',
-    rotation: 8,
-    hoverStyles: { bgColor: '#ef4444', textColor: '#ffffff' }
-  },
-  {
     label: 'contact',
-    href: '#',
+    href: '/',
     ariaLabel: 'Contact',
     rotation: -8,
     hoverStyles: { bgColor: '#8b5cf6', textColor: '#ffffff' }
@@ -153,9 +149,9 @@ export default function BubbleMenu({
     <>
       <nav className={containerClassName} style={style} aria-label="Main navigation">
         <div className="bubble logo-bubble" aria-label="Logo" style={{ background: menuBg }}>
-          <span className="logo-content">
+          <Link to="/" className="logo-content" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%' }}>
             {typeof logo === 'string' ? <img src={logo} alt="Logo" className="bubble-logo" /> : logo}
-          </span>
+          </Link>
         </div>
 
         <button
@@ -179,9 +175,10 @@ export default function BubbleMenu({
           <ul className="pill-list" role="menu" aria-label="Menu links">
             {menuItems.map((item, idx) => (
               <li key={idx} role="none" className="pill-col">
-                <a
+                <HashLink
+                  smooth
+                  to={item.href}
                   role="menuitem"
-                  href={item.href}
                   aria-label={item.ariaLabel || item.label}
                   className="pill-link"
                   style={{
@@ -194,6 +191,7 @@ export default function BubbleMenu({
                   ref={el => {
                     if (el) bubblesRef.current[idx] = el;
                   }}
+                  onClick={() => handleToggle()}
                 >
                   <span
                     className="pill-label"
@@ -203,7 +201,7 @@ export default function BubbleMenu({
                   >
                     {item.label}
                   </span>
-                </a>
+                </HashLink>
               </li>
             ))}
           </ul>

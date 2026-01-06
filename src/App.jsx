@@ -1,5 +1,5 @@
 import React from 'react'
-import {HashRouter, Routes, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Footer from './components/Layout/Footer.jsx'
 import Navbar from './components/Layout/Navbar.jsx'
 import Home from './pages/Home.jsx'
@@ -12,7 +12,7 @@ function App() {
 
   return (
     <ThemeProvider>
-      <HashRouter>
+      <Router>
       <Navbar />
       <Routes>
       <Route path="/" element={<Home />}/>
@@ -21,7 +21,7 @@ function App() {
       <Route path="/project/:id" element={<ProjectTemplate />}/>
       </Routes>
       <Footer />
-      </HashRouter>
+      </Router>
     </ThemeProvider>
   )
 }
